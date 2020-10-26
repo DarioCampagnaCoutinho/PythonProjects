@@ -44,9 +44,4 @@ def lista_de_paises(paises):
 
 
 if __name__ == '__main__':
-    resposta = requisicao(URL_ALL)
-    if resposta:
-        paises = parsing(resposta)
-        if paises:
-            print(contagem_de_paises(paises))
-            lista_de_paises(paises)
+    mostrar_populacao('brazil')
