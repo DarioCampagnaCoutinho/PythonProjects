@@ -38,6 +38,20 @@ def mostrar_populacao(nome_do_pais):
             print('Pais não encontrado!')
 
 
+def mostrar_moedas(nome_do_pais):
+    resposta = requisicao('{}/{}'.format(URL_NAME, nome_do_pais))
+    if resposta:
+        lista_paises = parsing(resposta)
+        if lista_paises:
+            for pais in lista_paises:
+                print('Moedas do pais : {}'.format(pais['name']))
+                moedas = pais['currencies']
+                for moeda in moedas:
+                    print('{} - {}'.format(moeda['name'], moeda['code']))
+        else:
+            print('Pais não encontrado!')
+
+
 def lista_de_paises(paises):
     for pais in paises:
         print(pais['name'])
@@ -45,3 +59,4 @@ def lista_de_paises(paises):
 
 if __name__ == '__main__':
     mostrar_populacao('brazil')
+    mostrar_moedas('brasil')
