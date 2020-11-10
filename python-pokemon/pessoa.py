@@ -48,6 +48,12 @@ class Player(Pessoa):
 class Inimigo(Pessoa):
     tipo = 'inimigo'
 
+    def __init__(self, nome=None, pokemons=[]):
+        if not pokemons:
+            for i in range(random.randint(1, 6)):
+                pokemons.append(random.choice(POKEMONS))
+        super().__init__(nome=nome, pokemons=pokemons)
+
 
 """
 pokemon1 = PokemonFogo('Charmander')
@@ -58,5 +64,6 @@ print(dario)
 dario.mostrar_pokemos()
 """
 
-eu = Player()
-print(eu)
+inimigo = Inimigo()
+print(inimigo)
+inimigo.mostrar_pokemos()
