@@ -40,7 +40,7 @@ class Pessoa:
 class Player(Pessoa):
     tipo = 'player'
 
-    def capiturar(self, pokemon):
+    def capturar(self, pokemon):
         self.pokemons.append(pokemon)
         print('{} capiturou {}'.format(self, pokemon))
 
@@ -54,16 +54,3 @@ class Inimigo(Pessoa):
                 pokemons.append(random.choice(POKEMONS))
         super().__init__(nome=nome, pokemons=pokemons)
 
-
-"""
-pokemon1 = PokemonFogo('Charmander')
-pokemon2 = PokemonFogo('Flario')
-
-dario = Player(nome='Dario', pokemons=[pokemon1, pokemon2])
-print(dario)
-dario.mostrar_pokemos()
-"""
-
-inimigo = Inimigo()
-print(inimigo)
-inimigo.mostrar_pokemos()
