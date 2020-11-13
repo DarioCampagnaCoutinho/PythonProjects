@@ -32,6 +32,7 @@ def escolher_pokemon_inicial(player):
 
 player = Player('Dario')
 player.capturar(PokemonFogo('Charmander', level=1))
+player.mostrar_dinheiro()
 
 inimigo = Inimigo(nome='Gary', pokemons=[PokemonEletrico('Pikachu', level=1)])
 player.batalhar(inimigo)
